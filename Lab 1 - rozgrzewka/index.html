@@ -4,27 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            justify-content: center;                        
+        }
+
+        #left
+        {
+            float:left;
+            position: relative;
+            top:5%;
+            left:25%;
+            background-color: lightgrey;
+            border:SOLID 2px;
+            height: 80vh;
+            width:20vw;
+            text-align: center;
+            justify-content: center;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        }
+
+        #right
+        {
+            float:left;
+            position: relative;
+            top:5%;
+            left:25%;
+            background-color: lightgrey;
+            border:SOLID 2px;
+            height: 80vh;
+            width:20vw;
+            text-align: center;
+            justify-content: center;
+            margin-left: 10px;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        }
+
+        input
+        {
+            width: 90%;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        button
+        {
+            float: center;
+            margin-top: 2%;
+            width: 10vw;
+            text-align: center;
+            height: 52px;
+        }
+
+    </style>
 </head>
 <body>  
 
-    <div id="buttons"> 
-        <button id="addField" onclick="AddInput()">Add field </button> <button id="DeleteField" onclick="DeleteInputs()">Del field </button>
-    </div>
+    <div id="left">
+        <div id="buttons"> 
+            <button id="addField" onclick="AddInput()">Add field </button> <button id="DeleteField" onclick="DeleteInputs()">Delete blank field </button>
+        </div>
     
-    </br></br>
-
-    <div id="op">
-        Sum:<input type="text" id="totalSum"/> Avg:<input type="text" id="avg"/> Min:<input type="text" id="min"/> Max:<input type="text" id="max"/>
-    </div>
-
-    </br></br>
-
-    <div id="fields">
-        <input type="text" class="field" id="field0"  value ='0'/> <input type="text" class="field" id="field1" value ='0'> <input type="text" class="field" id="field2" value ='0'>
+        <div id="fields">
+            <input type="text" class="field" id="field0"  value ='0'/> <input type="text" class="field" id="field1" value ='0'> <input type="text" class="field" id="field2" value ='0'>
+        </div>
     </div>
 
 
-    
+    <div id="right">
+        <div id="op">
+            Sum:<input type="text" id="totalSum"/> Avg:<input type="text" id="avg"/> Min:<input type="text" id="min"/> Max:<input type="text" id="max"/>
+        </div>
+    </div>
+
+  
     
 
     <script src="script.js"></script>
