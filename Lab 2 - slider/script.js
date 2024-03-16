@@ -77,11 +77,13 @@ imgs.push(string,vid, img1, img2, img3, img4,img5,img6);
 
 let aaminate = setInterval(Animate,5)
 
-let pos = -854;
+let poss = -854;
 let screenWidth = window.innerWidth;
 let cnt = 0;
 let pause = false;
 let lightbox = false;
+let pos = true;
+
 
 //#endregion
 
@@ -92,12 +94,12 @@ function Animate()
     
     slide.appendChild(imgs[cnt]);
 
-    slide.style.transform =`translateX(${pos}px)`
-    pos++
+    slide.style.transform =`translateX(${poss}px)`
+    reverse()
 
     let middlescreen = Math.round((screenWidth/2)-437)
     
-    if(pos == middlescreen)
+    if(poss == middlescreen)
     {
         clearInterval(aaminate)
         slide.style.transform =`translateX(${middlescreen+2}px)`
@@ -106,9 +108,15 @@ function Animate()
         
     }
 
-    if(pos >= screenWidth)
+    if(poss >= screenWidth + 854)
     {
-        pos = -854
+        poss = -854
+        slide.removeChild(imgs[cnt]);
+        cnt++;
+    }
+    else if(poss <= -855)
+    {
+        poss = screenWidth + 854
         slide.removeChild(imgs[cnt]);
         cnt++;
     }
@@ -255,10 +263,36 @@ function Lightbox()
 
 
 
-function removeAllChild(parent) {
+function removeAllChild(parent) 
+{
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+function reverse()
+{
+    if(pos==true)
+    {
+        poss++
+    }
+    else
+    {
+        poss--
+    }
+}
+
+function Position()
+{
+    if(pos == true)
+    {
+        pos=false
+    }
+    else
+    {
+        pos=true
+    }
+}
+
 
 //#endregion
