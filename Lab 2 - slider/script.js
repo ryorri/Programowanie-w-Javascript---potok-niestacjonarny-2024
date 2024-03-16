@@ -3,20 +3,6 @@ const main = document.querySelector('main')
 const slider = document.querySelector('.slider')
 const slide = document.querySelector('.slide')
 let dark = document.createElement('div')
-dark.setAttribute('class','dark')
-dark.style.backgroundColor='rgba(0,0,0,0.95)'
-dark.style.height='100vh'
-dark.style.width='100wv'
-dark.style.position='relative'
-dark.style.top='0'
-dark.style.left='0'
-dark.style.padding='50px'
-dark.setAttribute('onclick','Lightbox()')
-
-
-
-
-
 
 //#region  img
 const img1 = document.createElement('img')
@@ -72,9 +58,6 @@ string.innerHTML = "Cześć!"
 
 //#endregion
 
-const imgs = [];
-imgs.push(string,vid, img1, img2, img3, img4,img5,img6);
-
 let aaminate = setInterval(Animate,5)
 
 let poss = -854;
@@ -85,9 +68,29 @@ let lightbox = false;
 let pos = true;
 
 
+const imgs = [];
+imgs.push(string,vid, img1, img2, img3, img4,img5,img6);
+
+//#region Styling
+
+dark.setAttribute('class','dark')
+dark.style.backgroundColor='rgba(0,0,0,0.95)'
+dark.style.height='100vh'
+dark.style.width='100wv'
+dark.style.position='relative'
+dark.style.top='0'
+dark.style.left='0'
+dark.style.padding='50px'
+dark.setAttribute('onclick','Lightbox()')
+
+//#endregion
+
+
+
 //#endregion
 
 //#region Functions
+
 function Animate()
 {
     screenWidth = window.innerWidth;
@@ -133,11 +136,7 @@ function Animate()
 }
 
 
-function CallInterval()
-{
 
-    aaminate = setInterval(Animate,5)
-}
 
 function ShowSelectedSlide(no_of_slide)
 {   
@@ -188,13 +187,17 @@ function Lightbox()
     if(lightbox == false)
     {
         main.appendChild(dark)
-
+        dark.style.fontSize ='200px'
+        dark.style.paddingTop = '15%';
+        dark.style.paddingLeft = '15%';
 
         switch (cnt) {
             case 0:
                 const x = document.createElement('div')
                 x.style.color = 'white'
                 x.innerHTML = "Cześć!"
+                dark.style.paddingLeft = '0';
+                dark.style.textAlign = 'center';
                 dark.appendChild(x)
                 break;
             case 1:
@@ -202,6 +205,7 @@ function Lightbox()
                 a.src='vid/sax.mp4'
                 a.controls = true;
                 a.autoplay = true;
+                dark.style.paddingLeft = '30%';
                 dark.appendChild(a)
                 break;
             case 2:
@@ -261,7 +265,24 @@ function Lightbox()
     }
 }
 
+function Position()
+{
+    if(pos == true)
+    {
+        pos=false
+    }
+    else
+    {
+        pos=true
+    }
+}
 
+//#region Support Functions
+function CallInterval()
+{
+
+    aaminate = setInterval(Animate,5)
+}
 
 function removeAllChild(parent) 
 {
@@ -281,18 +302,8 @@ function reverse()
         poss--
     }
 }
+//#endregion
 
-function Position()
-{
-    if(pos == true)
-    {
-        pos=false
-    }
-    else
-    {
-        pos=true
-    }
-}
 
 
 //#endregion
