@@ -4,20 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drumkit</title>
+    <style>
+        .sounds
+        {
+            display:none;
+        }
+        #met
+        {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:18vh;
+            width:200px;
+            border-style: double; 
+            background-color: gray; 
+             
+        }
+
+        #container
+        {
+            display: inline-block;
+            position: absolute;
+            top:1%;
+            left:20vw;
+            width: 80vw;
+            height: 100%;
+        }
+
+
+        .tracks
+        {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            margin-left: -10%;
+            top: 0;
+            height:100px;
+            width:100%;
+            border-style: double;
+            text-align: center;
+            padding-top: 2%;    
+        }
+
+        .Menubtn
+        {
+            padding:20px;
+        }
+
+
+    </style>
+
 </head>
 <body>
-    <audio src="./sounds/clap.wav" controls data-key="a" data-volume="40" id="clap"></audio>
-    <audio src="./sounds/kick.wav" controls data-key="s" id="kick"></audio>
-    <audio src="./sounds/hihat.wav" controls data-key="d" id="hihat"></audio>
-    <audio src="./sounds/boom.wav" controls data-key="q" id="boom"></audio>
-    <audio src="./sounds/openhat.wav" controls data-key="w" id="openhat"></audio>
-    <audio src="./sounds/ride.wav" controls data-key="e" id="ride"></audio>
-    <audio src="./sounds/snare.wav" controls data-key="z" id="snare"></audio>
-    <audio src="./sounds/tink.wav" controls data-key="x" id="tink"></audio>
-    <audio src="./sounds/tom.wav" controls data-key="c" id="tom"></audio>
+    <audio class="sounds" src="./sounds/clap.wav" controls data-key="a" data-volume="40" id="clap"></audio>
+    <audio class="sounds" src="./sounds/kick.wav" controls data-key="s" id="kick"></audio>
+    <audio class="sounds" src="./sounds/hihat.wav" controls data-key="d" id="hihat"></audio>
+    <audio class="sounds" src="./sounds/boom.wav" controls data-key="q" id="boom"></audio>
+    <audio class="sounds" src="./sounds/openhat.wav" controls data-key="w" id="openhat"></audio>
+    <audio class="sounds" src="./sounds/ride.wav" controls data-key="e" id="ride"></audio>
+    <audio class="sounds" src="./sounds/snare.wav" controls data-key="z" id="snare"></audio>
+    <audio class="sounds" src="./sounds/tom.wav" controls data-key="c" id="tom"></audio>
+    <audio class="sounds" src="./sounds/tink.wav" controls data-key="x" id="tink"></audio>
 
 
-    <button id="btn" onclick="myFunction()">Play</button>
+    <div id = "menu">
+
+        <div id = "met">
+            <input type="number" id="metronomeField" style = "width:50px;"/> <br />
+            <button style="margin-top: 20px;"  class="Menubtn" onclick="PlayPauseMetronome ()">Start/Stop Metronome</button>
+        </div>
+    
+        <div id = "met">
+            <button style="margin-top: 20px;"  class="Menubtn" onclick="AddTrack()">Add track</button>
+        </div>
+    
+        <div id = "met">
+            <button style="margin-top: 20px;"  class="Menubtn" onclick="PlayAll()">Play all tracks</button>
+        </div>
+    
+        <div id = "met">
+            <button style="margin-top: 20px;"  class="Menubtn" onclick="LoopSelected()">Loop selected tracks</button>
+        </div>
+        
+        <div id = "met">
+            <button style="margin-top: 20px;"  class="Menubtn" onclick="PlaySelected()">Play selected tracks</button>
+        </div>
+
+    </div>
+
+    <div id="container">
+        <div class="tracks" id="track0">
+            <button class="buttons" id="RecBtn0" onclick="ButtonValue(0);Recording(0)">Record track</button>
+            <button class="buttons"id="PlayBtn0"  onclick="ButtonValue(0);Play(0)">Play track</button>
+            <button class="buttons"id="LpBtn0" onclick="ButtonValue(0);Loop(0)">Loop track</button>
+            <input type="checkbox" id="ChckBox0" onclick="Checklist(0)"/>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+    
+   
+    
 
 
     <script src="main.js"></script>
