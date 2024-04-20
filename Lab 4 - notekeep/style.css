@@ -1,0 +1,38 @@
+.menu 
+        {
+            position: relative;
+            display: block;
+            background-color: grey;
+            width: 100%;
+            height: 10vh;
+            border: solid 2px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .content 
+        {
+            position: relative;
+            display: block;
+            background-color: lightgray;
+            width: 100%;
+            height: 90vh;
+            border: solid 2px;
+            border-top: none;
+        }
+
+        .navbutts
+        {
+            height: 80px;
+            width: 300px;
+            font-size: 30px;
+        }
+
+        .notes
+        {
+            height: 20vh;
+            width: 20vw;
+            background-color: aliceblue;
+            position: relative;
+            display: inline-block   ;
+        }
