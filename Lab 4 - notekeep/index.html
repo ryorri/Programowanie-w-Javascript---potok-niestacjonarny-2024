@@ -9,11 +9,20 @@
 <body> 
 
     <div class ="menu">
-        <button class="navbutts" id="addNote" onclick="CreateNote()">Add note</button>
-        <button class="navbutts" id="clearAllNotes">Clear all note</button>
+        <button class="navbutts" id="addNote" onclick="CreateNote(true)">Add note</button>
+        <button class="navbutts" id="clearAllNotes" onclick="DeleteNote()">Clear all note</button>
+        <br><br>
+        <input type="text" placeholder="Search..." id="search" /> <button onclick="Search()">Go!</button>
     </div>
 
     <div class="content" id="board">
+        <h1>Notes</h1>
+    </div>
+    <div class="pinnedcontent" id="pinnedboard">
+        <h1>Important notes</h1>
+    </div>
+    <div class="doneboard">
+        <h1>Done notes</h1>
     </div>
 
     <script src="main.js"></script>
