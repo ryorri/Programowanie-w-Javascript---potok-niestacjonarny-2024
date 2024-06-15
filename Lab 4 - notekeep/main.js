@@ -214,6 +214,17 @@ function SetColor()
 
 function DeleteNote() 
 {
+
+    for(let i = 0; i <= noOfNotes; i++)
+        {
+        if(localStorage.getItem("note"+i) != undefined)
+            {
+                
+                document.getElementById("note"+i).remove()
+    
+            }
+        } 
+
     localStorage.clear();
 }
 
